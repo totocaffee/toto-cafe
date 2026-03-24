@@ -328,15 +328,70 @@ iframe {
 <div class="category clickable" onclick="toggleMenu('beer')">🍺 Pivo</div>
 <div id="beer" class="items">
   <div class="item"><span>Carlsberg točeno 0,1/0,2/0,3/0,5l</span><span>2,70€/2,90€/3,00€/3,50€</span></div>
-  <div class="item"><span>Carlsberg točeno 0,2l</span><span>3,00€</span></div>
-  <div class="item"><span>Carlsberg točeno 0,3l</span><span>3,00€</span></div>
-  <div class="item"><span>Carlsberg točeno 0,5l</span><span>3,00€</span></div>
   <div class="item"><span>Laško 0,33l</span><span>2,90€</span></div>
   <div class="item"><span>Laško 0,5l</span><span>3,10€</span></div>
   <div class="item"><span>Union 0,33l</span><span>2,90€</span></div>
   <div class="item"><span>Union 0,5l</span><span>3,10€</span></div>
+  <div class="item"><span>Union Radler 0,5l</span><span>3,00€</span></div>
+  <div class="item"><span>Laško Malt</span><span>3,00€</span></div>
+  <div class="item"><span>Staropramen 0,5l</span><span>3,20€</span></div>
+  <div class="item"><span>Staropramen temni 0,33l</span><span>3,00€</span></div>
+  <div class="item"><span>Oharas</span><span>3,00€</span></div>
+  <div class="item"><span>RESET</span><span>3,00€</span></div>
+  <div class="item"><span>Heiniken 0.0%</span><span>3,00€</span></div>
   <div class="item"><span>Heineken</span><span>3,60€</span></div>
-  <div class="item"><span>Guinness</span><span>4,50€</span></div>
+  <div class="item"><span>Augustiner 0,5l</span><span>4,50€</span></div>
+  <div class="item"><span>Kozel temen/svetli 0,5l</span><span>3,00€</span></div>
+  <div class="item"><span>Green Gold 0,33l</span><span>3,00€</span></div>
+
+</div>
+
+<!-- VINO -->
+<div class="category clickable" onclick="toggleMenu('wine')">🍷 Vino</div>
+<div id="wine" class="items">
+
+  <!-- BELO -->
+  <div class="subcategory clickable" onclick="toggleSub(event,'white')">Belo vino</div>
+  <div id="white" class="subitems">
+    <div class="item"><span>Küster 1dl</span><span>1,50€</span></div>
+    <div class="item"><span>Küster (muškatna vrsta) 1dl</span><span>1,60€</span></div>
+  </div>
+
+  <!-- RDEČE -->
+  <div class="subcategory clickable" onclick="toggleSub(event,'red')">Rdeče vino</div>
+  <div id="red" class="subitems">
+    <div class="item"><span>Cviček 1dl</span><span>1,60€</span></div>
+    <div class="item"><span>Merlot 1dl</span><span>1,60€</span></div>
+    <div class="item"><span>Refošk 1dl</span><span>1,60€</span></div>
+    <div class="item"><span>Cabernet Sauvignon 1dl</span><span>1,60€</span></div>
+  </div>
+
+  <!-- BUTELJČNO -->
+  <div class="subcategory clickable" onclick="toggleSub(event,'bottle')">Buteljčno vino</div>
+  <div id="bottle" class="subitems">
+    <div class="item"><span>Traminec (polsladko) 0,1l</span><span>3,40€</span></div>
+    <div class="item"><span>Sivi Pinot (suho) 0,1l</span><span>3,50€</span></div>
+    <div class="item"><span>Muškat sladki 0,1l</span><span>3,50€</span></div>
+    <div class="item"><span>Rumeni muškat 0,1l</span><span>3,50€</span></div>
+    <div class="item"><span>Renski Rizling 0,1l</span><span>3,40€</span></div>
+    <div class="item"><span>Sladki Refošk 0,1l</span><span>3,50€</span></div>
+  </div>
+
+  <!-- DESERTNO -->
+  <div class="subcategory clickable" onclick="toggleSub(event,'dessert')">Desertno vino</div>
+  <div id="dessert" class="subitems">
+    <div class="item"><span>Martini Bianco 1dl</span><span>3,50€</span></div>
+  </div>
+
+  <!-- PENINE -->
+  <div class="subcategory clickable" onclick="toggleSub(event,'sparkling')">Penine</div>
+  <div id="sparkling" class="subitems">
+    <div class="item"><span>Srebrna penina 0,1l</span><span>3,50€</span></div>
+    <div class="item"><span>Srebrna penina 0,2l</span><span>6,80€</span></div>
+    <div class="item"><span>Srebrna penina 0,375l</span><span>12,90€</span></div>
+    <div class="item"><span>Srebrna penina 0,75l</span><span>23,30€</span></div>
+  </div>
+
 </div>
 
 <!-- KOKTAJLI -->
