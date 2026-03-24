@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOTO Cafe</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0f0f0f;
+  color: white;
+}
+
+/* HERO */
+.hero {
+  height: 60vh;
+  background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero.small { height: 30vh; }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero h1 {
+  position: relative;
+  font-size: 3rem;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background: #1a1a1a;
+}
+
+.nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px 20px;
+  border: 1px solid #f5c542;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.nav a:hover {
+  background: #f5c542;
+  color: black;
+}
+
+/* CONTENT */
+main {
+  padding: 30px;
+  text-align: center;
+}
+
+/* NOVOSTI */
+.news-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.news-card {
+  background: #1a1a1a;
+  border-radius: 15px;
+  overflow: hidden;
+  width: 250px;
+}
+
+.news-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.news-card p {
+  padding: 15px;
+}
+
+/* MENU */
+.menu { max-width: 900px; margin: auto; }
+
+.category {
+  background: #1a1a1a;
+  padding: 25px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+.category.clickable { cursor: pointer; }
+
+.category.clickable:hover {
+  background: #2a2a2a;
+}
+
+.items { display: none; }
+
+.subcategory {
+  margin-top: 10px;
+  padding: 10px;
+  background: #2a2a2a;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.subitems { display: none; }
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  border-bottom: 1px solid #333;
+}
+
+/* BUTTONS */
+.review-btn {
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #f5c542;
+  color: black;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.instagram-btn {
+  margin-top: 15px;
+  padding: 12px 25px;
+  background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf);
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+iframe {
+  width: 90%;
+  height: 300px;
+  border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HOME -->
+<div id="homePage">
+
+<header class="hero">
+  <h1>TOTO Cafe</h1>
+</header>
+
+<nav class="nav">
+  <a onclick="showMenu()">Meni</a>
+  <a onclick="scrollToContact()">Kontakt</a>
+</nav>
+
+<main>
+
+<h2>Novo pri nas</h2>
+<div class="news-grid">
+  <div class="news-card">
+    <img src="akcija1.png">
+    <p>Vsak petek cocktail akcija 3+1 GRATIS!</p>
+  </div>
+
+  <div class="news-card">
+    <img src="akcija2.png">
+    <p>Nov cocktail v ponudbi!</p>
+  </div>
+
+  <div class="news-card">
+    <img src="akcija3.png">
+    <p>RESET pivo, za tiste ki si želijo spremembe!</p>
+  </div>
+</div>
+
+<section id="contact">
+<h2>Kontakt</h2>
+
+<iframe src="https://www.google.com/maps?q=46.5587373,15.6435368&output=embed"></iframe>
+
+<br>
+
+<a class="review-btn" href="https://www.google.com/maps/place/Toto+Cafe+Bar,+Mojca+Furman+S.P./@46.558741,15.6409619,17z/data=!4m8!3m7!1s0x476f77af27d73855:0x2d6b041852bf874c!8m2!3d46.5587373!4d15.6435368!9m1!1b1" target="_blank">
+⭐ Ocenite nas
+</a>
+
+<br>
+
+<a class="instagram-btn" href="https://www.instagram.com/totocafe.bar/" target="_blank">
+@totocafe.bar
+</a>
+
+</section>
+<footer>
+  <p>📞 +386 40 345 929</p>
+  <p>📍 Slomškov trg 13, Maribor</p>
+</footer>
+
+</main>
+</div>
+
+<!-- MENU -->
+<div id="menuPage" style="display:none;">
+
+<header class="hero small">
+  <h1>Meni</h1>
+</header>
+
+<nav class="nav">
+  <a onclick="showHome()">Domov</a>
+</nav>
+
+<main class="menu">
+
+<!-- TOPLI NAPITKI -->
+<div class="category clickable" onclick="toggleMenu('hot')">☕ Topli napitki</div>
+<div id="hot" class="items">
+
+  <div class="subcategory clickable" onclick="toggleSub(event,'coffee')">Kava</div>
+  <div id="coffee" class="subitems">
+    <div class="item"><span>Espresso / Ristretto</span><span>1,70€</span></div>
+    <div class="item"><span>Americano</span><span>1,70€</span></div>
+    <div class="item"><span>Kava z mlekom</span><span>1,90€</span></div>
+    <div class="item"><span>Kava z malo mleka</span><span>1,80€</span></div>
+    <div class="item"><span>Cappuccino</span><span>2,00€</span></div>
+    <div class="item"><span>Mali cappuccino</span><span>1,90€</span></div>
+    <div class="item"><span>Kava s smetano</span><span>2,30€</span></div>
+    <div class="item"><span>Macchiato</span><span>1,80€</span></div>
+    <div class="item"><span>Latte macchiato</span><span>2,40€</span></div>
+    <div class="item"><span>Bela kava</span><span>2,10€</span></div>
+    <div class="item"><span>Mala bela kava</span><span>2,00€</span></div>
+  </div>
+
+  <div class="subcategory clickable" onclick="toggleSub(event,'bio')">Bio / rastlinsko mleko</div>
+  <div id="bio" class="subitems">
+    <div class="item"><span>Kava s sojo</span><span>2,30€</span></div>
+    <div class="item"><span>Cappuccino (soja)</span><span>2,40€</span></div>
+    <div class="item"><span>Bela kava (soja)</span><span>2,70€</span></div>
+    <div class="item"><span>Latte macchiato (soja)</span><span>2,60€</span></div>
+    <div class="item"><span>Macchiato (soja)</span><span>2,00€</span></div>
+    <div class="item"><span>Kakav (soja)</span><span>2,70€</span></div>
+  </div>
+
+  <div class="subcategory clickable" onclick="toggleSub(event,'deca')">Brezkofeinska kava</div>
+  <div id="deca" class="subitems">
+    <div class="item"><span>Kava brez kofeina</span><span>2,10€</span></div>
+    <div class="item"><span>Kava z mlekom</span><span>2,50€</span></div>
+    <div class="item"><span>Cappuccino</span><span>2,60€</span></div>
+    <div class="item"><span>Latte macchiato</span><span>2,90€</span></div>
+    <div class="item"><span>Macchiato</span><span>2,30€</span></div>
+    <div class="item"><span>Bela kava</span><span>3,00€</span></div>
+    <div class="item"><span>Mala bela kava</span><span>2,60€</span></div>
+  </div>
+
+  <div class="subcategory clickable" onclick="toggleSub(event,'noncoffee')">
+    Brezkofeinski / ostali topli napitki
+  </div>
+  <div id="noncoffee" class="subitems">
+    <div class="item"><span>Kakav</span><span>2,30€</span></div>
+    <div class="item"><span>Vroča čokolada</span><span>3,10€</span></div>
+    <div class="item"><span>Čaj</span><span>2,00€</span></div>
+    <div class="item"><span>Čaj z mlekom</span><span>2,40€</span></div>
+    <div class="item"><span>Čaj z limono</span><span>2,40€</span></div>
+    <div class="item"><span>Čaj z medom</span><span>2,70€</span></div>
+  </div>
+
+  <div class="subcategory clickable" onclick="toggleSub(event,'special')">Kavni speciali</div>
+  <div id="special" class="subitems">
+    <div class="item"><span>Ledena kava</span><span>3,00€</span></div>
+    <div class="item"><span>Baileys kava</span><span>5,50€</span></div>
+    <div class="item"><span>Irska kava</span><span>5,60€</span></div>
+    <div class="item"><span>Monin latte</span><span>3,00€</span></div>
+  </div>
+
+</div>
+
+<!-- BREZALKOHOLNE -->
+<div class="category clickable" onclick="toggleMenu('soft')">🥤 Brezalkoholne pijače</div>
+<div id="soft" class="items">
+
+  <div class="subcategory clickable" onclick="toggleSub(event,'gazirane')">Gazirane</div>
+  <div id="gazirane" class="subitems">
+    <div class="item"><span>Coca Cola</span><span>3,00€</span></div>
+    <div class="item"><span>Pepsi</span><span>3,00€</span></div>
+    <div class="item"><span>Tonic</span><span>3,00€</span></div>
+    <div class="item"><span>Schweppes</span><span>3,00€</span></div>
+    <div class="item"><span>Cockta</span><span>3,00€</span></div>
+  </div>
+
+  <div class="subcategory clickable" onclick="toggleSub(event,'negazirane')">Negazirane</div>
+  <div id="negazirane" class="subitems">
+    <div class="item"><span>Fructal sok</span><span>3,00€</span></div>
+    <div class="item"><span>Voda 0,5l</span><span>2,20€</span></div>
+    <div class="item"><span>Limonada</span><span>3,10€</span></div>
+    <div class="item"><span>Cedevita</span><span>2,60€</span></div>
+  </div>
+
+</div>
+
+<!-- PIVO -->
+<div class="category clickable" onclick="toggleMenu('beer')">🍺 Pivo</div>
+<div id="beer" class="items">
+  <div class="item"><span>Laško 0,33l</span><span>2,90€</span></div>
+  <div class="item"><span>Laško 0,5l</span><span>3,10€</span></div>
+  <div class="item"><span>Union 0,33l</span><span>2,90€</span></div>
+  <div class="item"><span>Union 0,5l</span><span>3,10€</span></div>
+  <div class="item"><span>Heineken</span><span>3,60€</span></div>
+  <div class="item"><span>Guinness</span><span>4,50€</span></div>
+</div>
+
+<!-- KOKTAJLI -->
+<div class="category clickable" onclick="toggleMenu('cocktails')">🍸 Koktajli</div>
+<div id="cocktails" class="items">
+
+  <div class="subcategory clickable" onclick="toggleSub(event,'alcCocktails')">Alkoholni</div>
+  <div id="alcCocktails" class="subitems">
+    <div class="item"><span>Mojito</span><span>5,80€</span></div>
+    <div class="item"><span>Pina Colada</span><span>6,50€</span></div>
+    <div class="item"><span>Sex on the beach</span><span>6,50€</span></div>
+    <div class="item"><span>Long Island</span><span>9,50€</span></div>
+  </div>
+
+  <div class="subcategory clickable" onclick="toggleSub(event,'nonalcCocktails')">Brezalkoholni</div>
+  <div id="nonalcCocktails" class="subitems">
+    <div class="item"><span>Strawberry kiss</span><span>5,70€</span></div>
+    <div class="item"><span>Coconut kiss</span><span>5,10€</span></div>
+  </div>
+
+</div>
+
+<!-- HRANA -->
+<div class="category clickable" onclick="toggleMenu('food')">🍔 Hrana</div>
+<div id="food" class="items">
+  <div class="item"><span>Rogljiček</span><span>1,90€</span></div>
+  <div class="item"><span>Toast</span><span>3,50€</span></div>
+  <div class="item"><span>Panini</span><span>4,50€</span></div>
+</div>
+
+<!-- DODATKI -->
+<div class="category clickable" onclick="toggleMenu('extras')">➕ Dodatki</div>
+<div id="extras" class="items">
+  <div class="item"><span>Mleko</span><span>0,90€</span></div>
+  <div class="item"><span>Smetana</span><span>0,70€</span></div>
+  <div class="item"><span>Mala smetana</span><span>0,60€</span></div>
+  <div class="item"><span>Med</span><span>0,80€</span></div>
+</div>
+
+</main>
+</div>
+
+<script>
+function showMenu() {
+  homePage.style.display = "none";
+  menuPage.style.display = "block";
+}
+
+function showHome() {
+  menuPage.style.display = "none";
+  homePage.style.display = "block";
+}
+
+function scrollToContact() {
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+}
+
+function toggleMenu(id) {
+  const el = document.getElementById(id);
+  el.style.display = (el.style.display === "block") ? "none" : "block";
+}
+
+function toggleSub(event,id) {
+  event.stopPropagation();
+  const el = document.getElementById(id);
+  el.style.display = (el.style.display === "block") ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
