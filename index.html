@@ -553,23 +553,6 @@ iframe {
 
 </div>
 
-<!-- LIKERJI -->
-<div class="category clickable" onclick="toggleMenu('liquers')">🍶 Likerji</div>
-<div id="liquers" class="items">
-
-  <div class="item"><span>Baileys</span><span>3,60€</span></div>
-  <div class="item"><span>Jägermeister</span><span>3,30€</span></div>
-  <div class="item"><span>Amaretto</span><span>3,50€</span></div>
-  <div class="item"><span>Martini Bianco</span><span>3,50€</span></div>
-  <div class="item"><span>Martini Rosso</span><span>3,50€</span></div>
-  <div class="item"><span>Campari</span><span>3,50€</span></div>
-  <div class="item"><span>Countreau</span><span>3,90€</span></div>
-  <div class="item"><span>Kahlua</span><span>3,50€</span></div>
-  <div class="item"><span>Limoncello</span><span>3,50€</span></div>
-  <div class="item"><span>Sambuca</span><span>3,50€</span></div>
-
-</div>
-
 <!-- ŽGANE PIJAČE -->
 <div class="category clickable" onclick="toggleMenu('spirits')">🥃 Žgane pijače</div>
 <div id="spirits" class="items">
@@ -579,32 +562,50 @@ iframe {
     Grenčice
   </div>
   <div id="bitter" class="subitems">
-    <div class="item"><span>Viljamovka</span><span>3,50€</span></div>
-    <div class="item"><span>Gin Tanqueray</span><span>4,50€</span></div>
-    <div class="item"><span>Gordon's gin</span><span>3,50€</span></div>
-    <div class="item"><span>Gordon's pink gin</span><span>4,10€</span></div>
+        <div class="item"><span>Viljamovka</span><span>3,50€</span></div>
+        <div class="item"><span>Gin Tanqueray</span><span>4,50€</span></div>
+        <div class="item"><span>Gordon's gin</span><span>3,50€</span></div>
+        <div class="item"><span>Gordon's pink gin</span><span>4,10€</span></div>
+        <div class="item"><span>Travarica</span><span>3,50€</span></div>
+        <div class="item"><span>Tequila</span><span>3,50€</span></div>
+        <div class="item"><span>Vodka Finlandia</span><span>3,50€</span></div>
+        <div class="item"><span>Stock</span><span>3,50€</span></div>
+        <div class="item"><span>Borovničke</span><span>3,50€</span></div>
+        <div class="item"><span>Slivovka</span><span>3,50€</span></div>
+        <div class="item"><span>Jagertee</span><span>3,50€</span></div>
+        <div class="item"><span>Dunja - kutinovo žganje</span><span>3,90€</span></div>
+        <div class="item"><span>Stroh 80</span><span>3,50€</span></div>
+        <div class="item"><span>Martini Bianco</span><span>3,50€</span></div>
+        <div class="item"><span>Martini Rosso</span><span>3,50€</span></div>
+
+  </div>
+
+  <!-- Rum -->
+  <div class="subcategory clickable" onclick="toggleSub(event,'rum')">
+    Rum
+  </div>
+  <div id="rum" class="subitems">
     <div class="item"><span>Captain Morgan beli</span><span>3,50€</span></div>
     <div class="item"><span>Captain Morgan temni</span><span>3,00€</span></div>
-    <div class="item"><span>Campari</span><span>3,50€</span></div>
-    <div class="item"><span>Jägermeister</span><span>3,50€</span></div>
-    <div class="item"><span>Cynar</span><span>3,50€</span></div>
-    <div class="item"><span>Travarica</span><span>3,50€</span></div>
-    <div class="item"><span>Tequila</span><span>3,50€</span></div>
-    <div class="item"><span>Mandljeva Tequila</span><span>3,70€</span></div>
-    <div class="item"><span>Pelinkovec</span><span>3,50€</span></div>
     <div class="item"><span>Havana (7 years)</span><span>4,40€</span></div>
     <div class="item"><span>Domači rum</span><span>3,50€</span></div>
     <div class="item"><span>Beli rum</span><span>3,50€</span></div>
-    <div class="item"><span>Vodka Finlandia</span><span>3,50€</span></div>
-    <div class="item"><span>Stock</span><span>3,50€</span></div>
-    <div class="item"><span>Borovničke</span><span>3,50€</span></div>
-    <div class="item"><span>Slivovka</span><span>3,50€</span></div>
-    <div class="item"><span>Jagertee</span><span>3,50€</span></div>
-    <div class="item"><span>Dunja - kutinovo žganje</span><span>3,90€</span></div>
-    <div class="item"><span>Archer's</span><span>3,50€</span></div>
-    <div class="item"><span>Stroh 80</span><span>3,50€</span></div>
-    <div class="item"><span>Tavžent roža</span><span>3,50€</span></div>
+  </div>
 
+  <!-- Likerji -->
+  <div class="subcategory clickable" onclick="toggleSub(event,'liquer')">
+    Likerji
+  </div>
+  <div id="liquer" class="subitems">
+    <div class="item"><span>Baileys</span><span>3,60€</span></div>
+    <div class="item"><span>Amaretto</span><span>3,50€</span></div>
+    <div class="item"><span>Cointreau</span><span>3,90€</span></div>
+    <div class="item"><span>Kahlua</span><span>3,50€</span></div>
+    <div class="item"><span>Limoncello</span><span>3,50€</span></div>
+    <div class="item"><span>Sambuca</span><span>3,50€</span></div>
+    <div class="item"><span>Archer's</span><span>3,50€</span></div>
+    <div class="item"><span>Mandljeva tequila</span><span>3,70€</span></div>
+    <div class="item"><span>Shanky’s Whip</span><span>3,50€</span></div>
   </div>
 
   <!-- Whiskey -->
@@ -617,7 +618,6 @@ iframe {
     <div class="item"><span>Jameson</span><span>3,50€</span></div>
     <div class="item"><span>Tullamore dew</span><span>3,50€</span></div>
     <div class="item"><span>Chivas</span><span>5,10€</span></div>
-    <div class="item"><span>Shanky's whip</span><span>3,50€</span></div>
   </div>
 
   <!-- Cognac -->
@@ -626,9 +626,30 @@ iframe {
   </div>
   <div id="cognac" class="subitems">
     <div class="item"><span>Courvoisier</span><span>5,40€</span></div>
-
   </div>
 
+  <!-- Ostale žgane pijače -->
+  <div class="subcategory clickable" onclick="toggleSub(event,'other')">
+    Ostale žgane pijače
+  </div>
+  <div id="other" class="subitems">
+    <div class="item"><span>Viljamovka</span><span>3,50€</span></div>
+    <div class="item"><span>Gin Tanqueray</span><span>4,50€</span></div>
+    <div class="item"><span>Gordon's gin</span><span>3,50€</span></div>
+    <div class="item"><span>Gordon's pink gin</span><span>4,10€</span></div>
+    <div class="item"><span>Travarica</span><span>3,50€</span></div>
+    <div class="item"><span>Tequila</span><span>3,50€</span></div>
+    <div class="item"><span>Vodka Finlandia</span><span>3,50€</span></div>
+    <div class="item"><span>Stock</span><span>3,50€</span></div>
+    <div class="item"><span>Borovničke</span><span>3,50€</span></div>
+    <div class="item"><span>Slivovka</span><span>3,50€</span></div>
+    <div class="item"><span>Jagertee</span><span>3,50€</span></div>
+    <div class="item"><span>Dunja - kutinovo žganje</span><span>3,90€</span></div>
+    <div class="item"><span>Stroh 80</span><span>3,50€</span></div>
+    <div class="item"><span>Martini Bianco</span><span>3,50€</span></div>
+    <div class="item"><span>Martini Rosso</span><span>3,50€</span></div>
+  </div>
+ 	
 </div>
 
 <!-- KOKTAJLI -->
@@ -637,7 +658,6 @@ iframe {
 
   <div class="subcategory clickable" onclick="toggleSub(event,'alcCocktails')">Alkoholni</div>
   <div id="alcCocktails" class="subitems">
-    <div class="item"><span>Apple pie</span><span>6,90€</span></div>
     <div class="item"><span>Golden glove</span><span>9,20€</span></div>
     <div class="item"><span>Swimming pool</span><span>8,40€</span></div>
     <div class="item"><span>Sex on the beach</span><span>8,10€</span></div>
@@ -663,14 +683,18 @@ iframe {
     <div class="item"><span>Campari Sprirtz</span><span>kmalu v ponudbi</span></div>
     <div class="item"><span>Spritz z okusom manga</span><span>kmalu v ponudbi</span></div>
     <div class="item"><span>Limoncello spritz</span><span>5,80€</span></div>
-    <div class="item"><span>Tipsy Rudolf</span><span>7,00€</span></div>
-    <div class="item"><span>Vampirski poljub</span><span>6,60€</span></div>
   </div>
 
   <div class="subcategory clickable" onclick="toggleSub(event,'nonalcCocktails')">Brezalkoholni</div>
   <div id="nonalcCocktails" class="subitems">
     <div class="item"><span>Strawberry kiss</span><span>5,60€</span></div>
     <div class="item"><span>Coconut kiss</span><span>5,60€</span></div>
+  </div>
+
+  <div class="subcategory clickable" onclick="toggleSub(event,'seasonal')">Sezonski koktajli</div>
+  <div id="seasonal" class="subitems">
+    <div class="item"><span>Apple pie</span><span>6,90€</span></div>
+    <div class="item"><span>Tipsy Rudolf</span><span>7,00€</span></div>
   </div>
 
 </div>
